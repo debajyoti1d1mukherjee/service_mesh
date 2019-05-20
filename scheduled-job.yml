@@ -1,0 +1,19 @@
+piVersion: batch/v1beta1
+kind: CronJob 
+
+7:07:15 PM: apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: DailyJob
+  namespace: oc-service
+spec:
+  schedule: '@daily'
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: hello
+              image: <imageName>
+
+          restartPolicy: OnFailure
